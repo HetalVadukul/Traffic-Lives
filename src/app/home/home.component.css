@@ -1,0 +1,15 @@
+
+.immg{
+    /*   margin:auto;
+      margin-top: auto;
+      margin-bottom: auto;
+      display: block;
+      vertical-align: middle; */
+      position: absolute;
+       top: 47%;
+       left: 50%;
+       width:50%;
+    /*    height: 50%; */
+       margin-top: -25%; /* Half the height */
+       margin-left: -25%; /* Half the width */
+    }
