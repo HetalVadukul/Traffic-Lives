@@ -61,6 +61,16 @@
 
 .e-name{
   margin-top: 10px;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 800;
 }
+
+.names{
+  width: 90%;
+}
+/* 
+.d-name{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+} */
