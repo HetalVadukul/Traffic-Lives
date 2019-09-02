@@ -12,8 +12,8 @@ export class AboutUsComponent implements OnInit {
 
   ngOnInit() {
     $(document).ready(function() {
-      let w = $('.eimg').width();
-      $('.eimg').css({ 'height': w });
+      // let w = $('.eimg').width();
+      // $('.eimg').css({ 'height': w });
 
 
       let h = $('.eimg').height();
