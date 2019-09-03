@@ -1,2 +1,39 @@
-<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-<div class="test"><h2>Submit Us<br>Coming Soon....</h2></div>
+<div class="row justify-content-center" style="margin-top: 35px; color: white;">
+  <h2>Submit Us</h2>
+</div>
+
+<div class="offset-md-3 col-md-6" style="margin-top: 20px;">
+  <form class="submit-form">
+    <mat-form-field class="submit-full-width">
+      <input matInput placeholder="First Name" required>
+    </mat-form-field>
+    <mat-form-field class="submit-full-width">
+      <input matInput placeholder="Last Name" required>
+    </mat-form-field>
+    <mat-form-field class="submit-full-width">
+      <input matInput placeholder="Email" required>
+    </mat-form-field>
+    <mat-form-field class="submit-full-width">
+      <input matInput placeholder="Instagram Id">
+    </mat-form-field>
+    <mat-form-field class="submit-full-width">
+      <mat-label>Categories</mat-label>
+      <mat-select required>
+        <mat-option value="mt">Minitalks</mat-option>
+        <mat-option value="ref">Reflaction</mat-option>
+        <mat-option value="nf">Nano fable</mat-option>
+        <mat-option value="poem">Poem</mat-option>
+        <mat-option value="prolong">Prolong</mat-option>
+        <mat-option value="ol">Open Letter</mat-option>
+        <mat-option value="rant">Rant</mat-option>
+        <mat-option value="hindi">Hindi Write-up</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="submit-full-width">
+      <textarea matInput placeholder="Your Story" required></textarea>
+    </mat-form-field>
+    <button mat-raised-button color=primary style="width: 100%; margin-top: 3px;">Submit</button>
+  </form>
+  
+
+</div>
