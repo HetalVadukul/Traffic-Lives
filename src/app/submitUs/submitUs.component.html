@@ -3,22 +3,29 @@
 </div>
 
 <div class="offset-md-3 col-md-6" style="margin-top: 20px;">
-  <form class="submit-form">
+  <form class="submit-form" [formGroup]="submitus">
     <mat-form-field class="submit-full-width">
-      <input matInput placeholder="First Name" required>
+      <input matInput placeholder="First Name" required formControlName="fName">
+      <mat-error *ngIf="submitus.get('fName').hasError('required')">First name should not be empty</mat-error>
+      <mat-error *ngIf="submitus.get('fName').hasError('pattern')">Please enter valid name</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="submit-full-width">
+      <input matInput placeholder="Last Name" required formControlName="lName">
+      <mat-error *ngIf="submitus.get('lName').hasError('required')">Last name should not be empty</mat-error>
+      <mat-error *ngIf="submitus.get('lName').hasError('pattern')">Please enter valid name</mat-error>
     </mat-form-field>
     <mat-form-field class="submit-full-width">
-      <input matInput placeholder="Last Name" required>
+      <input matInput placeholder="Email" required formControlName="email">
+      <mat-error *ngIf="submitus.get('email').hasError('required')">Email should not be empty</mat-error>
+      <mat-error *ngIf="submitus.get('email').hasError('email')">Please enter valid email</mat-error>
     </mat-form-field>
     <mat-form-field class="submit-full-width">
-      <input matInput placeholder="Email" required>
-    </mat-form-field>
-    <mat-form-field class="submit-full-width">
-      <input matInput placeholder="Instagram Id">
+      <input matInput placeholder="Instagram Id" formControlName="instaId">
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <mat-label>Categories</mat-label>
-      <mat-select required>
+      <mat-select required formControlName="category">
         <mat-option value="mt">Minitalks</mat-option>
         <mat-option value="ref">Reflaction</mat-option>
         <mat-option value="nf">Nano fable</mat-option>
@@ -30,10 +37,11 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field class="submit-full-width">
-      <textarea matInput placeholder="Your Story" required></textarea>
+      <textarea matInput placeholder="Your Story" required formControlName="story"></textarea>
     </mat-form-field>
-    <button mat-raised-button color=primary style="width: 100%; margin-top: 3px;">Submit</button>
+    <button mat-raised-button color=primary
+      style="width: 100%; margin-top: 3px; font-weight: 800; color: black;">Submit</button>
   </form>
-  
+
 
 </div>

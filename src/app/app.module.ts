@@ -1,6 +1,7 @@
 import { RouterModule, Routes} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +37,8 @@ export const routes: Routes = [  {path: '', component: HomeComponent},
       RouterModule.forRoot(routes),
       MatInputModule,
       MatSelectModule,
-      MatButtonModule
+      MatButtonModule,
+      ReactiveFormsModule
    ],
    exports:[
       MatInputModule,

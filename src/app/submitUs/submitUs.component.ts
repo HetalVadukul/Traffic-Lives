@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-submitUs',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmitUsComponent implements OnInit {
 
-  constructor() { }
+  submitus:FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.submitus = this.fb.group({
+      fName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
+      lName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
+      email: ['', [Validators.required, Validators.email]],
+      instaId: [''],
+      category: ['mt'],
+      story: ['']
+    });
   }
 
 }
