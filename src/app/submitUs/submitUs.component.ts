@@ -13,27 +13,29 @@ export class SubmitUsComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
   len: number;
-  categoryLengthValidation: any;
+  val: any = Validators.maxLength(60);
 
   onChange(category) {
     console.log(category);
 
     if (category === 'ref') {
       this.len = 280;
-      this.categoryLengthValidation = Validators.maxLength(this.len);
+      this.val = Validators.maxLength(280);
     } else if (category === 'nf') {
       this.len = 60;
-      this.categoryLengthValidation = Validators.maxLength(this.len);
+      this.val = Validators.maxLength(60);
     } else if (category === 'mt') {
       this.len = 180;
-      this.categoryLengthValidation = Validators.maxLength(this.len);
+      this.val = Validators.maxLength(180);
     }
 }
 
   ngOnInit() {
 
-    this.categoryLengthValidation = Validators.maxLength(180);
+    // this.categoryLengthValidation = Validators.maxLength(180);
     this.len = 180;
+
+    // let val = Validators.maxLength(60);
 
     this.submitus = this.fb.group({
       fName: ['', [Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
@@ -41,7 +43,7 @@ export class SubmitUsComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       instaId: [''],
       category: ['mt'],
-      story: ['', [this.categoryLengthValidation]]
+      story: ['', [this.val]]
     });
   }
 
