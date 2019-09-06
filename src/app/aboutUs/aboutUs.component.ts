@@ -11,7 +11,7 @@ export class AboutUsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).ready(function() {
+    $(document).ready( function() {
       let w = $('.eimg').width();
       $('.eimg').css({ 'height': w });
 
@@ -19,7 +19,7 @@ export class AboutUsComponent implements OnInit {
       let he = $('.e-name').height();
       let hd = $('.d-name').height();
 
-      let total = h + he + hd + 50;
+      let total = h + he + hd + 30;
 
       $('.flip-card-inner').css({ 'height': total });
       $('.flip-card-front').css({ 'height': total });

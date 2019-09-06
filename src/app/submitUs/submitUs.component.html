@@ -1,19 +1,20 @@
-<div class="row justify-content-center" style="margin-top: 35px; color: white;">
-  <h2>Submit Us</h2>
+<div class="row justify-content-center" style="margin-top: 25px; color: white;">
+  <h2 style="font-weight: 600;">Submit Us</h2>
 </div>
 
 <div class="offset-md-3 col-md-6" style="margin-top: 20px;">
   <form class="submit-form" [formGroup]="submitus">
     <mat-form-field class="submit-full-width">
       <input matInput placeholder="First Name" required formControlName="fName">
-      <mat-error *ngIf="submitus.get('fName').hasError('required')">First name should not be empty</mat-error>
+      
       <mat-error *ngIf="submitus.get('fName').hasError('pattern')">Please enter valid name</mat-error>
+      <mat-error *ngIf="submitus.get('fName').hasError('minlength')">Name should be more than two characters</mat-error>
     </mat-form-field>
 
     <mat-form-field class="submit-full-width">
       <input matInput placeholder="Last Name" required formControlName="lName">
-      <mat-error *ngIf="submitus.get('lName').hasError('required')">Last name should not be empty</mat-error>
       <mat-error *ngIf="submitus.get('lName').hasError('pattern')">Please enter valid name</mat-error>
+      <mat-error *ngIf="submitus.get('fName').hasError('minlength')">Name should be more than two characters</mat-error>    
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <input matInput placeholder="Email" required formControlName="email">
@@ -25,22 +26,23 @@
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <mat-label>Categories</mat-label>
-      <mat-select required formControlName="category">
+      <mat-select required formControlName="category" [(ngModel)]="category" (ngOnChanges)="onChange()">
         <mat-option value="mt">Minitalks</mat-option>
-        <mat-option value="ref">Reflaction</mat-option>
+        <mat-option value="ref">Reflection</mat-option>
         <mat-option value="nf">Nano fable</mat-option>
         <mat-option value="poem">Poem</mat-option>
         <mat-option value="prolong">Prolong</mat-option>
         <mat-option value="ol">Open Letter</mat-option>
-        <mat-option value="rant">Rant</mat-option>
         <mat-option value="hindi">Hindi Write-up</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field class="submit-full-width">
-      <textarea matInput placeholder="Your Story" required formControlName="story"></textarea>
+      <textarea matInput #story placeholder="Your Story" required formControlName="story" ></textarea>
+      <mat-hint align="start">{{category}}</mat-hint>
+      <mat-hint align="end">{{story.value.length}} / {{len}}</mat-hint>
     </mat-form-field>
-    <button mat-raised-button color=primary
-      style="width: 100%; margin-top: 3px; font-weight: 800; color: black;">Submit</button>
+    <button mat-raised-button color=primary [disabled]="submitus.invalid"
+      style="width: 100%; margin-top: 6px; font-weight: 800; color: black;">Submit</button>
   </form>
 
 
