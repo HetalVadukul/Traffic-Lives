@@ -44,7 +44,7 @@ export class SubmitUsComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       instaId: [''],
       category: ['mt'],
-      story: ['mt', [this.categoryLengthValidation]]
+      story: ['', [this.categoryLengthValidation]]
     });
   }
 
