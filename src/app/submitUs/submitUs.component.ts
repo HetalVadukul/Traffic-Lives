@@ -14,7 +14,7 @@ export class SubmitUsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
   len: number;
 //   category = 'mt';
-  categoryLengthValidation = Validators.maxLength(180);
+  let categoryLengthValidation: any;
 
   onChange(category) {
     console.log(category);
@@ -33,7 +33,7 @@ export class SubmitUsComponent implements OnInit {
 
   ngOnInit() {
 
-    // let categoryLengthValidation = Validators.maxLength(180);
+    this.categoryLengthValidation = Validators.maxLength(180);
     this.len = 180;
     
 
