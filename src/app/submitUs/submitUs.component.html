@@ -26,7 +26,7 @@
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <mat-label>Categories</mat-label>
-      <mat-select required formControlName="category" #category (selectionChange)="onChange()">
+      <mat-select required formControlName="category" #category (selectionChange)="onChange(category.value)">
         <mat-option value="mt">Minitalks</mat-option>
         <mat-option value="ref">Reflection</mat-option>
         <mat-option value="nf">Nano fable</mat-option>
