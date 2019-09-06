@@ -13,8 +13,7 @@ export class SubmitUsComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
   len: number;
-//   category = 'mt';
-  let categoryLengthValidation: any;
+  categoryLengthValidation: any;
 
   onChange(category) {
     console.log(category);
@@ -35,8 +34,6 @@ export class SubmitUsComponent implements OnInit {
 
     this.categoryLengthValidation = Validators.maxLength(180);
     this.len = 180;
-    
-
 
     this.submitus = this.fb.group({
       fName: ['', [Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
