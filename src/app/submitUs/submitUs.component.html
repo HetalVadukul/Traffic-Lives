@@ -26,7 +26,7 @@
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <mat-label>Categories</mat-label>
-      <mat-select required formControlName="category" [(ngModel)]="category" (ngOnChanges)="onChange()">
+      <mat-select required formControlName="category" #category (selectionChange)="onChange()">
         <mat-option value="mt">Minitalks</mat-option>
         <mat-option value="ref">Reflection</mat-option>
         <mat-option value="nf">Nano fable</mat-option>
@@ -38,7 +38,7 @@
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <textarea matInput #story placeholder="Your Story" required formControlName="story" ></textarea>
-      <mat-hint align="start">{{category}}</mat-hint>
+      <mat-hint align="start">{{category.value}}</mat-hint>
       <mat-hint align="end">{{story.value.length}} / {{len}}</mat-hint>
     </mat-form-field>
     <button mat-raised-button color=primary [disabled]="submitus.invalid"
