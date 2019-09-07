@@ -6,15 +6,16 @@
   <form class="submit-form" [formGroup]="submitus">
     <mat-form-field class="submit-full-width">
       <input matInput placeholder="First Name" required formControlName="fName">
-      
+      <mat-error *ngIf="submitus.get('fName').hasError('required')">First name should not be empty</mat-error>      
       <mat-error *ngIf="submitus.get('fName').hasError('pattern')">Please enter valid name</mat-error>
-      <mat-error *ngIf="submitus.get('fName').hasError('minlength')">Name should be more than two characters</mat-error>
+      <mat-error *ngIf="submitus.get('fName').hasError('minlength') && !submitus.get('fName').hasError('required')">Name should be more than two characters</mat-error>
     </mat-form-field>
 
     <mat-form-field class="submit-full-width">
       <input matInput placeholder="Last Name" required formControlName="lName">
+      <mat-error *ngIf="submitus.get('lName').hasError('required')">Last name should not be empty</mat-error>      
       <mat-error *ngIf="submitus.get('lName').hasError('pattern')">Please enter valid name</mat-error>
-      <mat-error *ngIf="submitus.get('fName').hasError('minlength')">Name should be more than two characters</mat-error>    
+      <mat-error *ngIf="submitus.get('fName').hasError('minlength') && !submitus.get('lName').hasError('required')">Name should be more than two characters</mat-error>    
     </mat-form-field>
     <mat-form-field class="submit-full-width">
       <input matInput placeholder="Email" required formControlName="email">
@@ -40,7 +41,8 @@
       <textarea matInput #story placeholder="Your Story" required formControlName="story" ></textarea>
       <mat-hint align="start">{{category.value}}</mat-hint>
       <mat-hint align="end">{{story.value.length}} / {{len}}</mat-hint>
-      <mat-error *ngIf="submitus.get('story').hasError('maxlength')">Characters shoud not be more than {{len}}</mat-error>
+      <mat-error align="start" *ngIf="submitus.get('story').hasError('required')">Story field should not be empty</mat-error>
+      <mat-error align="start" *ngIf="submitus.get('story').hasError('maxlength')">Characters shoud not be more than {{len}}. [{{story.value.length}} / {{len}}]</mat-error>
     </mat-form-field>
     <button mat-raised-button color=primary [disabled]="submitus.invalid"
       style="width: 100%; margin-top: 6px; font-weight: 800; color: black;">Submit</button>
