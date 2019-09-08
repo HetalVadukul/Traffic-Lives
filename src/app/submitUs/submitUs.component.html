@@ -1,52 +1,51 @@
 <div class="row justify-content-center" style="margin-top: 25px; color: white;">
-  <h2 style="font-weight: 600;">Submit Us</h2>
+    <h2 style="font-weight: 600;">Submit Us</h2>
 </div>
 
 <div class="offset-md-3 col-md-6" style="margin-top: 20px;">
-  <form class="submit-form" [formGroup]="submitus">
-    <mat-form-field class="submit-full-width">
-      <input matInput placeholder="First Name" required formControlName="fName">
-      <mat-error *ngIf="submitus.get('fName').hasError('required')">First name should not be empty</mat-error>      
-      <mat-error *ngIf="submitus.get('fName').hasError('pattern')">Please enter valid name</mat-error>
-      <mat-error *ngIf="submitus.get('fName').hasError('minlength') && !submitus.get('fName').hasError('required')">Name should be more than two characters</mat-error>
-    </mat-form-field>
+    <form class="submit-form" [formGroup]="submitus">
+        <mat-form-field class="submit-full-width">
+            <input matInput placeholder="First Name" required formControlName="fName">
+            <mat-error *ngIf="submitus.get('fName').hasError('required')">First name should not be empty</mat-error>
+            <mat-error *ngIf="submitus.get('fName').hasError('pattern')">Please enter valid name</mat-error>
+            <mat-error *ngIf="submitus.get('fName').hasError('minlength') && !submitus.get('fName').hasError('required')">Name should be more than two characters</mat-error>
+        </mat-form-field>
 
-    <mat-form-field class="submit-full-width">
-      <input matInput placeholder="Last Name" required formControlName="lName">
-      <mat-error *ngIf="submitus.get('lName').hasError('required')">Last name should not be empty</mat-error>      
-      <mat-error *ngIf="submitus.get('lName').hasError('pattern')">Please enter valid name</mat-error>
-      <mat-error *ngIf="submitus.get('fName').hasError('minlength') && !submitus.get('lName').hasError('required')">Name should be more than two characters</mat-error>    
-    </mat-form-field>
-    <mat-form-field class="submit-full-width">
-      <input matInput placeholder="Email" required formControlName="email">
-      <mat-error *ngIf="submitus.get('email').hasError('required')">Email should not be empty</mat-error>
-      <mat-error *ngIf="submitus.get('email').hasError('email')">Please enter valid email</mat-error>
-    </mat-form-field>
-    <mat-form-field class="submit-full-width">
-      <input matInput placeholder="Instagram Id" formControlName="instaId">
-    </mat-form-field>
-    <mat-form-field class="submit-full-width">
-      <mat-label>Categories</mat-label>
-      <mat-select required formControlName="category" #category (selectionChange)="onChange(category.value)">
-        <mat-option value="mt">Minitalks</mat-option>
-        <mat-option value="ref">Reflection</mat-option>
-        <mat-option value="nf">Nano fable</mat-option>
-        <mat-option value="poem">Poem</mat-option>
-        <mat-option value="prolong">Prolong</mat-option>
-        <mat-option value="ol">Open Letter</mat-option>
-        <mat-option value="hindi">Hindi Write-up</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field class="submit-full-width">
-      <textarea matInput #story placeholder="Your Story" required formControlName="story" ></textarea>
-      <mat-hint align="start">{{category.value}}</mat-hint>
-      <mat-hint align="end">{{story.value.length}} / {{len}}</mat-hint>
-      <mat-error align="start" *ngIf="submitus.get('story').hasError('required')">Story field should not be empty</mat-error>
-      <mat-error align="start" *ngIf="submitus.get('story').hasError('maxlength')">Characters shoud not be more than {{len}}. [{{story.value.length}} / {{len}}]</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color=primary [disabled]="submitus.invalid"
-      style="width: 100%; margin-top: 6px; font-weight: 800; color: black;">Submit</button>
-  </form>
+        <mat-form-field class="submit-full-width">
+            <input matInput placeholder="Last Name" required formControlName="lName">
+            <mat-error *ngIf="submitus.get('lName').hasError('required')">Last name should not be empty</mat-error>
+            <mat-error *ngIf="submitus.get('lName').hasError('pattern')">Please enter valid name</mat-error>
+            <mat-error *ngIf="submitus.get('lName').hasError('minlength') && !submitus.get('lName').hasError('required')">Name should be more than two characters</mat-error>
+        </mat-form-field>
+        <mat-form-field class="submit-full-width">
+            <input matInput placeholder="Email" required formControlName="email">
+            <mat-error *ngIf="submitus.get('email').hasError('required')">Email should not be empty</mat-error>
+            <mat-error *ngIf="submitus.get('email').hasError('email')">Please enter valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field class="submit-full-width">
+            <input matInput placeholder="Instagram Id" formControlName="instaId">
+        </mat-form-field>
+        <mat-form-field class="submit-full-width">
+            <mat-label>Categories</mat-label>
+            <mat-select required formControlName="category" #category (selectionChange)="onChange(category.value)">
+                <mat-option value="mt">Minitalks</mat-option>
+                <mat-option value="ref">Reflection</mat-option>
+                <mat-option value="nf">Nano fable</mat-option>
+                <mat-option value="poem">Poem</mat-option>
+                <mat-option value="prolong">Prolong</mat-option>
+                <mat-option value="ol">Open Letter</mat-option>
+                <mat-option value="hindi">Hindi Write-up</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="submit-full-width">
+            <textarea matInput #story placeholder="Your Story" required formControlName="story"></textarea>
+            <mat-hint align="start">{{category.value}}</mat-hint>
+            <mat-hint align="end">{{story.value.length}} / {{len}}</mat-hint>
+            <mat-error align="start" *ngIf="submitus.get('story').hasError('required')">Story field should not be empty</mat-error>
+            <mat-error align="start" *ngIf="submitus.get('story').hasError('maxlength')">Characters shoud not be more than {{len}}. [{{story.value.length}} / {{len}}]</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color=primary [disabled]="submitus.invalid" style="width: 100%; margin-top: 6px; font-weight: 800; color: black;">Submit</button>
+    </form>
 
 
 </div>
