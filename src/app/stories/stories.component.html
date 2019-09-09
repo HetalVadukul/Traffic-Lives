@@ -1,2 +1,41 @@
-<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-<div class="test"><h2>Stories<br>Coming Soon....</h2></div>
+<div class="row justify-content-center" style="margin-top: 25px; color: white;">
+    <h2 style="font-weight: 600;">Top Stories</h2>
+</div>
+
+<div class="row" style="margin-top: 25px; color: black;">
+    <!-- <div *ngFor="let story of stories">
+        <img src="{{ story.fields.storyImage.fields.file.url }}">
+        <h3>{{ story.fields.category }}</h3>
+        <p>{{ story.fields.caption }}</p>
+    </div> -->
+
+    <div class="col-md-3  col-6 storyBlock" *ngFor="let story of stories; index as i">
+
+        <img src="{{ story.fields.storyImage.fields.file.url }}" class="story" data-toggle="modal" [attr.data-target]="'#img'+ i">
+        <!-- The Modal -->
+        <div class="modal" id="img{{i}}" tabindex='-1'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{ story.fields.category }}</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <pre>{{ story.fields.caption }}</pre>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button mat-raised-button color=warn data-dismiss="modal" style="width: 100%; font-weight: 800; color: white;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

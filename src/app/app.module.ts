@@ -14,6 +14,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import { StoryContentfulService } from './storyService/storyContentful.service';
 
 export const routes: Routes = [  {path: '', component: HomeComponent},
                                  {path: 'aboutUs', component: AboutUsComponent},
@@ -45,7 +46,9 @@ export const routes: Routes = [  {path: '', component: HomeComponent},
       MatSelectModule,
       MatButtonModule
    ],
-   providers: [],
+   providers: [
+      StoryContentfulService
+   ],
    bootstrap: [
       AppComponent
    ]
