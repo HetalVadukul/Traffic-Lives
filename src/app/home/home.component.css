@@ -1,15 +1,76 @@
-
-.immg{
-    /*   margin:auto;
-      margin-top: auto;
-      margin-bottom: auto;
-      display: block;
-      vertical-align: middle; */
-      position: absolute;
-       top: 47%;
-       left: 50%;
-       width:50%;
-    /*    height: 50%; */
-       margin-top: -25%; /* Half the height */
-       margin-left: -25%; /* Half the width */
+@media (min-width: 768px) {
+    .immg {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        width: 50%;
+        /*    height: 50%; */
+        margin-top: -35%;
+        /* Half the height */
+        margin-left: -25%;
+        /* Half the width */
     }
+    .immg1 {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        width: 50%;
+        /*    height: 50%; */
+        margin-top: 5%;
+        /* Half the height */
+        margin-left: -25%;
+        /* Half the width */
+    }
+    .immg2 {
+        position: absolute;
+        top: 47%;
+        left: 51%;
+        width: 50%;
+        /*    height: 50%; */
+        margin-top: 15%;
+        /* Half the height */
+        margin-left: -25%;
+        /* Half the width */
+    }
+}
+
+@media (max-width: 768px) {
+    .immg {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        width: 50%;
+        /*    height: 50%; */
+        margin-top: -40%;
+        /* Half the height */
+        margin-left: -25%;
+        /* Half the width */
+    }
+    .immg1 {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        width: 50%;
+        /*    height: 50%; */
+        /* margin-top: -25% ; */
+        /* Half the height */
+        margin-left: -25%;
+        /* Half the width */
+    }
+    .immg2 {
+        position: absolute;
+        top: 47%;
+        left: 51%;
+        width: 50%;
+        /*    height: 50%; */
+        margin-top: 10%;
+        /* Half the height */
+        margin-left: -25%;
+        /* Half the width */
+    }
+}
+
+#particles-js {
+    height: 99%;
+    width: 100%;
+}
