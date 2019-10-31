@@ -1,6 +1,9 @@
-# TrafficLives
+# [TrafficLives](https://traffic-lives.herokuapp.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
+
+## Website link
+[click here for website](https://traffic-lives.herokuapp.com/)
 
 ## Development server
 
