@@ -15,7 +15,6 @@ export class TestserviceService {
   hubConnection: HubConnection | undefined;
   messages: Subject<string> = new Subject();
 
-
 this.hubConnection = new signalR.HubConnectionBuilder()
   .withUrl(this.baseUrl)
   .configureLogging(signalR.LogLevel.Information)
@@ -35,6 +34,5 @@ this.hubConnection.onclose((error) => {
   }
   console.error('Something went wrong: ', error);
   });
-
 }
 
