@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HubConnection } from '@aspnet/signalr';
 import * as signalR from '@aspnet/signalr';
-import { Observable } from 'rxjs';
-
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -14,6 +12,8 @@ export class TestserviceService {
   baseUrl = 'https://poc-api-healthcheck.azurewebsites.net/api';
   hubConnection: HubConnection | undefined;
   messages: Subject<string> = new Subject();
+
+  constructor() { }
 
 this.hubConnection = new signalR.HubConnectionBuilder()
   .withUrl(this.baseUrl)
