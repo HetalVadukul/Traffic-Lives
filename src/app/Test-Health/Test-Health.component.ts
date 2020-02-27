@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TestserviceService } from './../testservice/testservice.service';
+
 
 @Component({
   selector: 'app-Test-Health',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestHealthComponent implements OnInit {
 
-  constructor() { }
+  health: string;
+  constructor(private signalRService: TestserviceService) { }
 
   ngOnInit() {
+    this.signalRService.messages.subscribe(message => {
+      this.health = message;
+    });
   }
 
 }
