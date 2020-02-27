@@ -3,7 +3,7 @@ import { TestserviceService } from './../testservice/testservice.service';
 
 
 @Component({
-  selector: 'app-testHealth',
+  selector: 'app-test-health',
   templateUrl: './testHealth.component.html',
   styleUrls: ['./testHealth.component.css']
 })

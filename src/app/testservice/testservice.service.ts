@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
 export class TestserviceService {
 
 
-  baseUrl: string = 'https://poc-api-healthcheck.azurewebsites.net/api';
+  baseUrl = 'https://poc-api-healthcheck.azurewebsites.net/api';
   hubConnection: HubConnection | undefined;
   messages: Subject<string> = new Subject();
 
