@@ -15,8 +15,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { StoryContentfulService } from './storyService/storyContentful.service';
-import { TestHealthComponent } from './Test-Health/Test-Health.component';
 import { TestserviceService } from './testservice/testservice.service';
+import { TestHealthComponent } from './testHealth/testHealth.component';
 
 export const routes: Routes = [  {path: '', component: HomeComponent},
                                  {path: 'aboutUs', component: AboutUsComponent},
@@ -33,6 +33,7 @@ export const routes: Routes = [  {path: '', component: HomeComponent},
       SubmitUsComponent,
       BlogsComponent,
       StoriesComponent,
+      TestHealthComponent,
       TestHealthComponent
    ],
    imports: [

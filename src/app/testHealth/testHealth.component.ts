@@ -3,9 +3,9 @@ import { TestserviceService } from './../testservice/testservice.service';
 
 
 @Component({
-  selector: 'app-Test-Health',
-  templateUrl: './Test-Health.component.html',
-  styleUrls: ['./Test-Health.component.css']
+  selector: 'app-testHealth',
+  templateUrl: './testHealth.component.html',
+  styleUrls: ['./testHealth.component.css']
 })
 export class TestHealthComponent implements OnInit {
 
@@ -17,5 +17,6 @@ export class TestHealthComponent implements OnInit {
       this.health = message;
     });
   }
+
 
 }

@@ -33,7 +33,7 @@ this.hubConnection.onclose((error) => {
   if (this.hubConnection) {
     this.hubConnection.start();
   }
-  console.error(`Something went wrong: ${error}`);
+  console.error('Something went wrong: ', error);
   });
 
 }
