@@ -15,11 +15,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { StoryContentfulService } from './storyService/storyContentful.service';
+import { TestHealthComponent } from './Test-Health/Test-Health.component';
 
 export const routes: Routes = [  {path: '', component: HomeComponent},
                                  {path: 'aboutUs', component: AboutUsComponent},
                                  {path: 'submitUs', component: SubmitUsComponent},
                                  {path: 'blogs', component: BlogsComponent},
+                                 {path: 'health', component: TestHealthComponent},
                                  {path: 'stories', component: StoriesComponent}];
 
 @NgModule({
@@ -29,7 +31,8 @@ export const routes: Routes = [  {path: '', component: HomeComponent},
       AboutUsComponent,
       SubmitUsComponent,
       BlogsComponent,
-      StoriesComponent
+      StoriesComponent,
+      TestHealthComponent
    ],
    imports: [
       BrowserModule,
@@ -41,7 +44,7 @@ export const routes: Routes = [  {path: '', component: HomeComponent},
       MatButtonModule,
       ReactiveFormsModule
    ],
-   exports:[
+   exports: [
       MatInputModule,
       MatSelectModule,
       MatButtonModule

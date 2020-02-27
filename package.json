@@ -24,6 +24,7 @@
         "@angular/platform-browser": "~8.2.4",
         "@angular/platform-browser-dynamic": "~8.2.4",
         "@angular/router": "~8.2.4",
+        "@microsoft/signalr": "^3.1.2",
         "contentful": "^7.9.1",
         "express": "^4.17.1",
         "handlebars": "^4.7.3",
