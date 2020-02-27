@@ -13,6 +13,7 @@ export class TestHealthComponent implements OnInit {
   constructor(private signalRService: TestserviceService) { }
 
   ngOnInit() {
+    this.signalRService.init();
     this.signalRService.messages.subscribe(message => {
       this.health = message;
     });
