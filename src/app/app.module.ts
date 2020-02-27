@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { StoryContentfulService } from './storyService/storyContentful.service';
 import { TestHealthComponent } from './Test-Health/Test-Health.component';
+import { TestserviceService } from './testservice/testservice.service';
 
 export const routes: Routes = [  {path: '', component: HomeComponent},
                                  {path: 'aboutUs', component: AboutUsComponent},
@@ -50,7 +51,8 @@ export const routes: Routes = [  {path: '', component: HomeComponent},
       MatButtonModule
    ],
    providers: [
-      StoryContentfulService
+      StoryContentfulService,
+      TestserviceService
    ],
    bootstrap: [
       AppComponent
