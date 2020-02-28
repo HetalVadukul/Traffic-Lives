@@ -16,6 +16,7 @@ export class TestHealthComponent implements OnInit {
     this.signalRService.init();
     this.signalRService.messages.subscribe(message => {
       this.health = message;
+      console.log(message);
     });
   }
 
