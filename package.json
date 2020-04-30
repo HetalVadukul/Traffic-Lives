@@ -29,7 +29,7 @@
         "contentful": "^7.9.1",
         "express": "^4.17.1",
         "handlebars": "^4.7.3",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "particles.js": "^2.0.0",
         "path": "^0.12.7",
         "rxjs": "~6.4.0",
